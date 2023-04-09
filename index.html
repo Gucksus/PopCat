@@ -29,12 +29,15 @@
         <script>
             var cnt = 0;
 
+            pop1 = document.getElementById("popcet-1");
+            pop2 = document.getElementById("popcet-2");
+            
             let paragraph= document.getElementById("cnt");
             paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
 
             function popPer() {
-                document.getElementById("popcet-1").style="block";
-                document.getElementById("popcet-2").style="none";
+                pop1.style.display = "block";
+                pop2.style.display = "none";
                 document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 cnt++;
             }
@@ -43,13 +46,13 @@
             window.addEventListener("keyup", () => popPer());
 
             window.addEventListener("mousedown", () =>{
-                document.getElementById("popcet-1").style="none";
-                document.getElementById("popcet-2").style="block";
+                pop1.style.display = "none";
+                pop2.style.display = "block";
                 document.getElementById("popsound").play();
             });
             window.addEventListener("keydown", () =>{
-                document.getElementById("popcet-1").style="none";
-                document.getElementById("popcet-2").style="block";
+                pop1.style.display = "none";
+                pop2.style.display = "block";
                 document.getElementById("popsound").play();
             });
         </script>
