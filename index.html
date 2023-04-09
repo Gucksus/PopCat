@@ -22,7 +22,7 @@
     <body>
         <p id="cnt"></p>
         <img id="popcet-1" src="1.svg" alt="Popcet">
-        <img id="popcet-2" src="1.svg" alt="Popcet" style="display:hidden;">
+        <img id="popcet-2" src="2.svg" alt="Popcet" style="display:none;">
 
         <audio id="popsound" src="PC.webm"></audio>
 
@@ -34,7 +34,7 @@
 
             function popPer() {
                 document.getElementById("popcet1").style="block";
-                document.getElementById("popcet2").style="hidden";
+                document.getElementById("popcet2").style="none";
                 document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 document.getElementById("popsound").play();
                 cnt++;
@@ -44,11 +44,11 @@
             window.addEventListener("keyup", () => popPer());
 
             window.addEventListener("mousedown", () =>{
-                document.getElementById("popcet1").style="hidden";
+                document.getElementById("popcet1").style="none";
                 document.getElementById("popcet2").style="block";
             });
             window.addEventListener("keydown", () =>{
-                document.getElementById("popcet1").style="hidden";
+                document.getElementById("popcet1").style="none";
                 document.getElementById("popcet2").style="block";
             });
         </script>
