@@ -21,7 +21,8 @@
     </head>
     <body>
         <p id="cnt"></p>
-        <img id="popcet" src="twitter-card.svg" alt="Popcet">
+        <img id="popcet-1" src="1.svg" alt="Popcet">
+        <img id="popcet-2" src="1.svg" alt="Popcet" style="display:hidden;">
 
         <audio id="popsound" src="PC.wav"></audio>
 
@@ -32,7 +33,8 @@
             paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
 
             function popPer() {
-                document.getElementById("popcet").src = "1.svg";
+                document.getElementById("popcet1").style="block";
+                document.getElementById("popcet2").style="hidden";
                 document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 document.getElementById("popsound").play();
                 cnt++;
@@ -42,10 +44,12 @@
             window.addEventListener("keyup", () => popPer());
 
             window.addEventListener("mousedown", () =>{
-                document.getElementById("popcet").src="2.svg";
+                document.getElementById("popcet1").style="hidden";
+                document.getElementById("popcet2").style="block";
             });
             window.addEventListener("keydown", () =>{
-                document.getElementById("popcet").src="2.svg";
+                document.getElementById("popcet1").style="hidden";
+                document.getElementById("popcet2").style="block";
             });
         </script>
     </body>
