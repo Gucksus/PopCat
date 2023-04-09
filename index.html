@@ -36,7 +36,6 @@
                 document.getElementById("popcet-1").style="block";
                 document.getElementById("popcet-2").style="none";
                 document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
-                document.getElementById("popsound").play();
                 cnt++;
             }
 
@@ -46,10 +45,12 @@
             window.addEventListener("mousedown", () =>{
                 document.getElementById("popcet-1").style="none";
                 document.getElementById("popcet-2").style="block";
+                document.getElementById("popsound").play();
             });
             window.addEventListener("keydown", () =>{
                 document.getElementById("popcet-1").style="none";
                 document.getElementById("popcet-2").style="block";
+                document.getElementById("popsound").play();
             });
         </script>
     </body>
