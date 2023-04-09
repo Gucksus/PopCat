@@ -33,8 +33,8 @@
             paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
 
             function popPer() {
-                document.getElementById("popcet1").style="block";
-                document.getElementById("popcet2").style="none";
+                document.getElementById("popcet-1").style="block";
+                document.getElementById("popcet-2").style="none";
                 document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 document.getElementById("popsound").play();
                 cnt++;
@@ -44,12 +44,12 @@
             window.addEventListener("keyup", () => popPer());
 
             window.addEventListener("mousedown", () =>{
-                document.getElementById("popcet1").style="none";
-                document.getElementById("popcet2").style="block";
+                document.getElementById("popcet-1").style="none";
+                document.getElementById("popcet-2").style="block";
             });
             window.addEventListener("keydown", () =>{
-                document.getElementById("popcet1").style="none";
-                document.getElementById("popcet2").style="block";
+                document.getElementById("popcet-1").style="none";
+                document.getElementById("popcet-2").style="block";
             });
         </script>
     </body>
