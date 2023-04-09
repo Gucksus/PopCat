@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>Popcet</title>
+        <style>
+            img{
+                width: 50px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 40%;
+            }
+            p{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="cnt"></p>
+        <img id="popcet" src="twitter-card.svg" alt="Popcet">
+
+        <audio id="popsound" src="PC.wav"></audio>
+
+        <script>
+            var cnt = 0;
+
+            let paragraph= document.getElementById("cnt");
+            paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
+
+            function popPer() {
+                document.getElementById("popcet").src = "twitter-card.svg";
+                document.getElementById("cnt").innerHTML = `You've clicked on my face: ${cnt} time(s)`;
+                document.getElementById("popsound").play();
+                cnt++;
+            }
+
+            window.addEventListener("click", () => popPer());
+            window.addEventListener("keyup", () => popPer());
+
+            window.addEventListener("mousedown", () =>{
+                document.getElementById("popcet").src="twitter-card2.svg";
+            });
+            window.addEventListener("keydown", () =>{
+                document.getElementById("popcet").src="twitter-card2.svg";
+            });
+        </script>
+    </body>
+</html>
