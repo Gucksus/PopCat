@@ -32,8 +32,8 @@
             paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
 
             function popPer() {
-                document.getElementById("popcet").src = "twitter-card.svg";
-                document.getElementById("cnt").innerHTML = `You've clicked on my face: ${cnt} time(s)`;
+                document.getElementById("popcet").src = "1.svg";
+                document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 document.getElementById("popsound").play();
                 cnt++;
             }
@@ -42,10 +42,10 @@
             window.addEventListener("keyup", () => popPer());
 
             window.addEventListener("mousedown", () =>{
-                document.getElementById("popcet").src="twitter-card2.svg";
+                document.getElementById("popcet").src="2.svg";
             });
             window.addEventListener("keydown", () =>{
-                document.getElementById("popcet").src="twitter-card2.svg";
+                document.getElementById("popcet").src="2.svg";
             });
         </script>
     </body>
