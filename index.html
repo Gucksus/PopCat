@@ -23,7 +23,7 @@
         </style>
     </head>
     <body>
-        <p id="cnt"></p>
+        <p id="cnt">You've clicked on my face 0 time(s)</p>
         <img id="popcet-1" src="1.svg" alt="Popcet">
         <img id="popcet-2" src="2.svg" alt="Popcet" style="display:none;">
 
@@ -35,29 +35,26 @@
             pop1 = document.getElementById("popcet-1");
             pop2 = document.getElementById("popcet-2");
             
-            let paragraph= document.getElementById("cnt");
-            paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
+            let paragraph = document.getElementById("cnt");
 
-            function popPer() {
+            function release() {
                 pop1.style.display = "block";
                 pop2.style.display = "none";
-                document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
+                paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 cnt++;
             }
 
-            window.addEventListener("click", () => popPer());
-            window.addEventListener("keyup", () => popPer());
+            function hold() {
+                pop1.style.display = "none";
+                pop2.style.display = "block";
+                document.getElementById("popsound").play();
+}
 
-            window.addEventListener("mousedown", () =>{
-                pop1.style.display = "none";
-                pop2.style.display = "block";
-                document.getElementById("popsound").play();
-            });
-            window.addEventListener("keydown", () =>{
-                pop1.style.display = "none";
-                pop2.style.display = "block";
-                document.getElementById("popsound").play();
-            });
+            window.addEventListener("click", () => release());
+            window.addEventListener("keyup", () => release());
+
+            window.addEventListener("mousedown", () => hold();
+            window.addEventListener("keydown", () => hold());
         </script>
     </body>
 </html>
