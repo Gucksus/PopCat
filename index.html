@@ -5,6 +5,9 @@
         <meta charset="UTF-8">
         <title>Popcet</title>
         <style>
+            body{
+              overflow: hidden;
+            }
             img{
                 width: 50px;
                 display: block;
@@ -20,33 +23,38 @@
         </style>
     </head>
     <body>
-        <p id="cnt"></p>
-        <img id="popcet" src="twitter-card.svg" alt="Popcet">
+        <p id="cnt">You've clicked on my face 0 time(s)</p>
+        <img id="popcet-1" src="1.svg" alt="Popcet">
+        <img id="popcet-2" src="2.svg" alt="Popcet" style="display:none;">
 
-        <audio id="popsound" src="PC.wav"></audio>
+        <audio id="popsound" src="PC.webm"></audio>
 
         <script>
             var cnt = 0;
 
-            let paragraph= document.getElementById("cnt");
-            paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
+            pop1 = document.getElementById("popcet-1");
+            pop2 = document.getElementById("popcet-2");
+            
+            let paragraph = document.getElementById("cnt");
 
-            function popPer() {
-                document.getElementById("popcet").src = "1.svg";
-                document.getElementById("cnt").innerHTML = `You've clicked on my face ${cnt} time(s)`;
-                document.getElementById("popsound").play();
+            function release() {
+                pop1.style.display = "block";
+                pop2.style.display = "none";
+                paragraph.innerHTML = `You've clicked on my face ${cnt} time(s)`;
                 cnt++;
             }
 
-            window.addEventListener("click", () => popPer());
-            window.addEventListener("keyup", () => popPer());
+            function hold() {
+                pop1.style.display = "none";
+                pop2.style.display = "block";
+                document.getElementById("popsound").play();
+}
 
-            window.addEventListener("mousedown", () =>{
-                document.getElementById("popcet").src="2.svg";
-            });
-            window.addEventListener("keydown", () =>{
-                document.getElementById("popcet").src="2.svg";
-            });
+            window.addEventListener("click", () => release());
+            window.addEventListener("keyup", () => release());
+
+            window.addEventListener("mousedown", () => hold());
+            window.addEventListener("keydown", () => hold());
         </script>
     </body>
 </html>
